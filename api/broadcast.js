@@ -1,7 +1,7 @@
 import { GROUPS, SIGNATURE } from "./groupsConfig.js";
 
 export default async function handler(req, res) {
-  // טיפול ב־CORS
+  // טיפול ב-CORS
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, X-Webhook-Token");
@@ -50,6 +50,7 @@ export default async function handler(req, res) {
       });
 
       const data = await response.json();
+
       results.push({
         chatId,
         status: response.ok ? "sent" : "failed",
